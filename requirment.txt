@@ -1,10 +1,9 @@
 Flask
 Flask-SQLAlchemy
 Flask-Migrate
-Flask-JWT-Extended
+Flask-JWT
 Flask-WTF
 email-validator
 WTForms
-psycopg2-binary  
 mysqlclient      
 pymysql         
