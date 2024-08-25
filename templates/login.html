@@ -37,8 +37,8 @@
             </div>
         </form>
         <p class="text-center text-gray-500 text-xs">
-            &copy;2024 Your Company. All rights reserved.
-        </p>
+            &copy;Authentication JWT.
+        </p>    
     </div>
 
     <!-- Optional: Include your own JavaScript -->
@@ -65,7 +65,7 @@
                     }).then(() => {
                         // Store the token and redirect the user
                         localStorage.setItem('access_token', data.data.access_token);
-                        window.location.href = '/home';
+                        window.location.href = '/';
                     });
                 } else {
                     Swal.fire({

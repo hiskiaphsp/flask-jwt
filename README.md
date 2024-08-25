@@ -42,13 +42,15 @@ Ikuti langkah-langkah ini untuk mengatur proyek di mesin lokal Anda:
    Buat file `.env` di direktori root proyek untuk menyimpan variabel lingkungan yang spesifik:
 
    ```env
-   FLASK_APP=run.py
-   FLASK_ENV=development
-   SECRET_KEY=your_secret_key
-   SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:@localhost/db_auth_jwt
+      DB_USERNAME=root
+      DB_PASSWORD=
+      DB_HOST=localhost
+      DB_PORT=3306
+      DB_NAME=database
+      SECRET_KEY=your_secret_key
    ```
 
-   Ganti `your_secret_key` dengan kunci rahasia yang aman dan sesuaikan `SQLALCHEMY_DATABASE_URI` sesuai dengan konfigurasi database Anda (misalnya, gunakan `postgresql://user:password@localhost/db_name` untuk PostgreSQL).
+   Ganti `your_secret_key` dengan kunci rahasia yang aman dan sesuaikan `Konfigurasi Databse` sesuai dengan database Anda.
 
 4. **Inisialisasi Database**
 
@@ -65,39 +67,47 @@ Ikuti langkah-langkah ini untuk mengatur proyek di mesin lokal Anda:
    Mulai server pengembangan Flask:
 
    ```bash
-   flask run
+   flask run --port=8080
    ```
 
-   Aplikasi akan tersedia di `http://127.0.0.1:5000/`.
+   Aplikasi akan tersedia di `http://127.0.0.1:8080/`.
 
 ## Penggunaan
 
 Setelah server berjalan, Anda dapat menggunakan alat seperti Postman untuk berinteraksi dengan API:
 
-- **Mendaftarkan pengguna baru**:
+- **API Mendaftarkan pengguna baru**:
   - Endpoint: `POST /api/register`
   - Body (JSON):
     ```json
     {
-      "name": "johndoe",
-      "email": "johndoe@example.com",
-      "password": "securepassword123"
+      "name": "test",
+      "email": "test@gmail.com.com",
+      "password": "password123"
     }
     ```
 
-- **Login pengguna yang sudah ada**:
+- **API Login pengguna yang sudah ada**:
   - Endpoint: `POST /api/login`
   - Body (JSON):
     ```json
     {
-      "email": "johndoe@example.com",
-      "password": "securepassword123"
+      "email": "test@gmail.com",
+      "password": "password123"
     }
     ```
 
-- **Mengambil informasi pengguna (membutuhkan JWT)**:
+- **API Mengambil informasi pengguna (membutuhkan JWT)**:
   - Endpoint: `GET /api/user-info`
   - Header:
     ```
     Authorization: Bearer <your_jwt_token>
     ```
+- **Halaman Login**:
+   - Endpoint: `GET /login`
+
+- **Halaman Register**:
+   - Endpoint: `GET /register`
+
+- **Halaman Home**:
+   - Endpoint: `GET /`

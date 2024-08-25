@@ -72,6 +72,6 @@ def show_register():
     form = RegistrationForm()
     return render_template('register.html', form=form)
 
-@frontend_bp.route('/home', methods=['GET'])
+@frontend_bp.route('/', methods=['GET'])
 def show_home():
     return render_template('home.html')
