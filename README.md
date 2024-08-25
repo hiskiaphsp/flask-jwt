@@ -25,7 +25,7 @@ Ikuti langkah-langkah ini untuk mengatur proyek di mesin lokal Anda:
    Kloning repository proyek ke mesin lokal Anda menggunakan Git:
 
    ```bash
-   git clone https://github.com/username-anda/flask-jwt-auth.git
+   git clone https://github.com/hiskiaphsp/flask-jwt.git
    cd flask-jwt-auth
    ```
 
